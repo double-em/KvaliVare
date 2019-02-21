@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace KvalitetLibrary.Domain
 {
-    class SaleOrderLine
+    public class SaleOrderLine
     {
+        public Product product { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
     }
 }
