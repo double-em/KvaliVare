@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kvalitet1", "Kvalitet1\Kvalitet1.csproj", "{93AB2128-97BB-466B-A449-CE91DB6DCF76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KvalitetLibrary", "KvalitetLibrary\KvalitetLibrary.csproj", "{97AD4694-C0DA-462A-8B3E-BC76255C8538}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{93AB2128-97BB-466B-A449-CE91DB6DCF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93AB2128-97BB-466B-A449-CE91DB6DCF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93AB2128-97BB-466B-A449-CE91DB6DCF76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
