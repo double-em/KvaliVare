@@ -13,5 +13,14 @@ namespace KvalitetLibrary.Domain
         public string Description { get; set; }
         public double Price { get; set; }
         public int MinInStock { get; set; }
+
+        public Product(int productId, string name, string description, double price, int minInStock)
+        {
+            ProductId = productId;
+            Name = name;
+            Description = description;
+            Price = price;
+            MinInStock = minInStock;
+        }
     }
 }

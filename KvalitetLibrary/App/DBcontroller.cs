@@ -8,5 +8,6 @@ namespace KvalitetLibrary.App
 {
     class DBcontroller
     {
+
     }
 }
