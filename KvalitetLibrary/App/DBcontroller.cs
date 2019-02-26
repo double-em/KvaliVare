@@ -36,6 +36,27 @@ namespace KvalitetLibrary.App
             }
         }
 
+        public int RegisterUser(string name, string address, string zip, string town, string telephone)
+        {
+            using (SqlConnection connection = GetDatabaseConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("spRegisterUser", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                    cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = address;
+                    cmd.Parameters.Add("@zip", SqlDbType.NVarChar).Value = zip;
+                    cmd.Parameters.Add("@town", SqlDbType.NVarChar).Value = town;
+                    cmd.Parameters.Add("@telephone", SqlDbType.NVarChar).Value = telephone;
+
+                    connection.Open();
+
+                    return int.Parse(ListResult(cmd)[0]);
+                }
+            }
+        }
+
         List<string> ListResult(SqlCommand cmd)
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -47,7 +68,14 @@ namespace KvalitetLibrary.App
                     string resultString = "";
                     for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        resultString += reader[i] + ",";
+                        if (reader.FieldCount == 1)
+                        {
+                            resultString += reader[i];
+                        }
+                        else
+                        {
+                            resultString += reader[i] + ",";
+                        }
                     }
                     result.Add(resultString);
                 }

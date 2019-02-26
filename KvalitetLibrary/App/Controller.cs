@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using KvalitetLibrary.Domain;
@@ -27,10 +28,21 @@ namespace KvalitetLibrary.App
 
         }
 
-        public void CreateCustomerandAdd(int id, string name, string address, string ZIP, string town, string telephone)
+        public void CreateCustomerandAdd(string name, string address, string ZIP, string town, string telephone)
         {
+            int id = dBcontroller.RegisterUser(name, address, ZIP, town, telephone);
             Customer customer = customerRepository.CreateCustomer(id, name, address, ZIP, town, telephone);
             customerRepository.AddCustomer(customer);
+        }
+
+        public void CreateOrder(string orderDate, string deliveryDate, int productTypeId, int quantity)
+        {
+            
+        }
+
+        public void AddSaleOrderLine(int orderId)
+        {
+            
         }
 
         private void update()
