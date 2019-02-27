@@ -115,7 +115,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\KvalitetLibrary\KvalitetLibrary.csproj">
+      <Project>{97ad4694-c0da-462a-8b3e-bc76255c8538}</Project>
+      <Name>KvalitetLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Billeder\saks 2.png" />
   </ItemGroup>

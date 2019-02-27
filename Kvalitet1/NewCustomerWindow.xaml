@@ -31,11 +31,12 @@
         </Border>
 
 
-        <TextBox x:Name="CustomerNameTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="CustomerNameTxtBox_TextChanged"/>
-        <TextBox x:Name="AdressTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,187,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="AdressTxtBox_TextChanged"/>
-        <TextBox x:Name="ZipTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,261,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="ZipTxtBox_TextChanged"/>
-        <TextBox x:Name="TownTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,335,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="TownTxtBox_TextChanged"/>
-        <TextBox x:Name="PhoneTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,409,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="PhoneTxtBox_TextChanged"/>
+        <TextBox x:Name="CustomerNameTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="AdressTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,187,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="ZipTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,261,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="TownTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,335,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="PhoneTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,409,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250"/>
+        <Button Content="Opret" HorizontalAlignment="Left" Margin="10,481,0,0" VerticalAlignment="Top" Width="371" Height="78" FontSize="26" Click="Button_Click"/>
 
     </Grid>
 </Window>

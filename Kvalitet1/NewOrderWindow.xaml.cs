@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KvalitetLibrary.App;
 
 namespace Kvalitet1
 {
@@ -19,9 +20,11 @@ namespace Kvalitet1
     /// </summary>
     public partial class NewOrderWindow : Window
     {
-        public NewOrderWindow()
+        private Controller control;
+        public NewOrderWindow(Controller control)
         {
             InitializeComponent();
+            this.control = control;
         }
 
         private void TilbageButton_Click(object sender, RoutedEventArgs e)

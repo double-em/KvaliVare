@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KvalitetLibrary.App;
 
 namespace Kvalitet1
 {
@@ -19,9 +20,11 @@ namespace Kvalitet1
     /// </summary>
     public partial class NewCustomerWindow : Window
     {
-        public NewCustomerWindow()
+        private Controller control;
+        public NewCustomerWindow(Controller control)
         {
             InitializeComponent();
+            this.control = control;
         }
 
         private void TilbageButton_Click(object sender, RoutedEventArgs e)
@@ -31,29 +34,9 @@ namespace Kvalitet1
             this.Close();
         }
 
-        private void CustomerNameTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void AdressTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ZipTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TownTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void PhoneTxtBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            control.CreateCustomerandAdd(CustomerNameTxtBox.Text, AdressTxtBox.Text, ZipTxtBox.Text, TownTxtBox.Text, PhoneTxtBox.Text);
         }
     }
 }

@@ -19,6 +19,11 @@
         </Border>
         
         <TextBox x:Name="CustomerIDTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="CustomerIDTxtBox_TextChanged"/>
-   
+        <Label Name="lFindID" Content="ID: Ingen " HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
+        <Label Name="lFindName" Content="Navn: Ingen " HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
+        <Label Name="lFindZIP" Content="ZIP: Ingen" HorizontalAlignment="Left" Margin="11,234,0,0" VerticalAlignment="Top"/>
+        <Label Name="lFindTown" Content="By: Ingen" HorizontalAlignment="Left" Margin="79,234,0,0" VerticalAlignment="Top"/>
+        <Label Name="lFindTelephone" Content="Telefonnummer: Ingen" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.556,2.5"/>
+
     </Grid>
 </Window>

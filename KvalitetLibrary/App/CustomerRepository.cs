@@ -32,5 +32,18 @@ namespace KvalitetLibrary.App
             return customer;
         }
 
+        public string GetCustomer(string searchQuery)
+        {
+            foreach (Customer customer in customers)
+            {
+                int.TryParse(searchQuery, out int id);
+                if (customer.Name == searchQuery || customer.Id == id)
+                {
+                    return customer.ToString();
+                }
+            }
+            return "Ingen,Ingen,Ingen,Ingen,Ingen,Ingen";
+        }
+
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KvalitetLibrary;
+using KvalitetLibrary.App;
 
 namespace Kvalitet1
 {
@@ -20,14 +22,16 @@ namespace Kvalitet1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Controller control;
         public MainWindow()
         {
             InitializeComponent();
+            control = new Controller();
         }
 
         private void NewOrderbutton_Click(object sender, RoutedEventArgs e)
         {
-            NewOrderWindow order = new NewOrderWindow();
+            NewOrderWindow order = new NewOrderWindow(control);
             order.Show();
             this.Close();
         
@@ -35,7 +39,7 @@ namespace Kvalitet1
 
         private void NewCustomerbutton_Click(object sender, RoutedEventArgs e)
         {
-            NewCustomerWindow newcustomer = new NewCustomerWindow();
+            NewCustomerWindow newcustomer = new NewCustomerWindow(control);
             newcustomer.Show();
             this.Close();
 
@@ -43,7 +47,7 @@ namespace Kvalitet1
 
         private void FindCustomerbutton_Click(object sender, RoutedEventArgs e)
         {
-            FindCustomerWindow findcustomer = new FindCustomerWindow();
+            FindCustomerWindow findcustomer = new FindCustomerWindow(control);
             findcustomer.Show();
             this.Close();
 

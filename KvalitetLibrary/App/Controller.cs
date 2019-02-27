@@ -45,6 +45,11 @@ namespace KvalitetLibrary.App
             
         }
 
+        public string GetCustomer(string searchQuery)
+        {
+            return customerRepository.GetCustomer(searchQuery);
+        }
+
         private void update()
         {
             templist = dBcontroller.GetAllCustomers();            
