@@ -25,26 +25,26 @@ namespace Kvalitet1
             InitializeComponent();
         }
 
-        private void OpretOrdrebutton_Click(object sender, RoutedEventArgs e)
+        private void NewOrderbutton_Click(object sender, RoutedEventArgs e)
         {
-            OpretOrdreWindow ordre = new OpretOrdreWindow();
-            ordre.Show();
+            NewOrderWindow order = new NewOrderWindow();
+            order.Show();
+            this.Close();
+        
+        }
+
+        private void NewCustomerbutton_Click(object sender, RoutedEventArgs e)
+        {
+            NewCustomerWindow newcustomer = new NewCustomerWindow();
+            newcustomer.Show();
             this.Close();
 
         }
 
-        private void OpretKundebutton_Click(object sender, RoutedEventArgs e)
+        private void FindCustomerbutton_Click(object sender, RoutedEventArgs e)
         {
-            OpretKundeWindow opretkunde = new OpretKundeWindow();
-            opretkunde.Show();
-            this.Close();
-
-        }
-
-        private void FindKundebutton_Click(object sender, RoutedEventArgs e)
-        {
-            FindKundeWindow findkunde = new FindKundeWindow();
-            findkunde.Show();
+            FindCustomerWindow findcustomer = new FindCustomerWindow();
+            findcustomer.Show();
             this.Close();
 
         }

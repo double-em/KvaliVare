@@ -5,20 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kvalitet1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1080">
-    <Grid>
+        Title="MainWindow" Height="600" Width="400">
 
-        <Grid>
+    <Grid Background="#FF410A66" >
+        <Label Content=" Pretty Hair" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" >
+        </Label>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Border Width="100" Height="100" Margin="15" >
+                <Border.Background>
+                    <ImageBrush ImageSource="Billeder/saks 2.png" />
+                    
+                </Border.Background>
+            </Border>
+        </StackPanel>
 
-            <Grid Height="90" VerticalAlignment="Top" Background="#FFBF7676" >
-                <Label Content="Pretty Hair" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" />
-            </Grid>
-            <Button x:Name="PetIDbutton" Content="Opret Ordre " HorizontalAlignment="Left" Margin="466,246,0,0" VerticalAlignment="Top" Width="96" Height="51"/>
-            <Grid Width="190" HorizontalAlignment="Left" Background="#FF2BE2A8" Margin="436,90,0,0"/>
-            <Button x:Name="FindKundebutton" Content="Find kunde " HorizontalAlignment="Left" Margin="476,415,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="FindKundebutton_Click"/>
-            <Button x:Name="OpretOrdrebutton" Content="Opret ordre" HorizontalAlignment="Left" Margin="476,190,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="OpretOrdrebutton_Click"/>
-            <Button x:Name="OpretKundebutton" Content="Opret Kunde" HorizontalAlignment="Left" Margin="476,297,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="OpretKundebutton_Click"/>
-        </Grid>
+        <Border Background="White" Margin="30,130,30,30" CornerRadius ="22" >
+            
+        </Border>
+
+        <Button x:Name="FindCustomerbutton" Content="Find kunde " HorizontalAlignment="Left" Margin="140,416,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="FindCustomerbutton_Click"/>
+        <Button x:Name="NewOrderbutton" Content="Opret ordre" HorizontalAlignment="Left" Margin="140,202,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="NewOrderbutton_Click"/>
+        <Button x:Name="NewCustomerbutton" Content="Opret Kunde" HorizontalAlignment="Left" Margin="140,305,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="NewCustomerbutton_Click"/>
+
 
 
     </Grid>

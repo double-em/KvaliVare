@@ -15,13 +15,25 @@ using System.Windows.Shapes;
 namespace Kvalitet1
 {
     /// <summary>
-    /// Interaction logic for OpretKundeWindow.xaml
+    /// Interaction logic for FindKundeWindow.xaml
     /// </summary>
-    public partial class OpretKundeWindow : Window
+    public partial class FindCustomerWindow : Window
     {
-        public OpretKundeWindow()
+        public FindCustomerWindow()
         {
             InitializeComponent();
+        }
+
+        private void TilbageButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
+
+        private void CustomerIDTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
