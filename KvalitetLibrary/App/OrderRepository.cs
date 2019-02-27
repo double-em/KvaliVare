@@ -21,5 +21,15 @@ namespace KvalitetLibrary.App
             }
             return instance;
         }
+
+        public void AddOrder(Order order)
+        {
+            orders.Add(order);
+        }
+
+        public Order CreateOrder(List<SaleOrderLine> saleOrderLines, Customer customer, int orderId, string orderDate, string deliveryDate, bool picked)
+        {
+            return new Order(saleOrderLines, customer, orderId, orderDate, deliveryDate, picked);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace KvalitetLibrary.Domain
 {
     public class Order
     {
-        private List<SaleOrderLine> orderlines = new List<SaleOrderLine>();
+        private List<SaleOrderLine> orderlines;
         public Customer customer { get; set; }
         public int OrderId { get; set; }
         public string OrderDate { get; set; }

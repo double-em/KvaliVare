@@ -50,6 +50,35 @@ namespace KvalitetLibrary.App
             }
         }
 
+        public List<string> GetAllOrders()
+        {
+            using (SqlConnection connection = GetDatabaseConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetAllOrders", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+                    return ListResult(cmd);
+                }
+            }
+        }
+
+        public List<string> GetSaleOrderLines(int orderId)
+        {
+            using (SqlConnection connection = GetDatabaseConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetSaleOrderLines", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Id", SqlDbType.Int).Value = orderId;
+
+                    connection.Open();
+                    return ListResult(cmd);
+                }
+            }
+        }
+
         public int RegisterUser(string name, string address, string zip, string town, string telephone)
         {
             using (SqlConnection connection = GetDatabaseConnection())
@@ -96,5 +125,7 @@ namespace KvalitetLibrary.App
                 return result;
             }
         }
+
+        
     }
 }

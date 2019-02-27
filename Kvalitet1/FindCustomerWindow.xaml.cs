@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using KvalitetLibrary;
 using KvalitetLibrary.App;
+using KvalitetLibrary.Domain;
 
 namespace Kvalitet1
 {
@@ -38,13 +39,14 @@ namespace Kvalitet1
 
         private void CustomerIDTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string[] customerInfo = control.GetCustomer(CustomerIDTxtBox.Text).Split(',');
+            Customer customer = control.GetCustomer(CustomerIDTxtBox.Text);
 
-            lFindID.Content = "ID: " + customerInfo[0];
-            lFindName.Content = "Navn: " + customerInfo[1];
-            lFindZIP.Content = "ZIP: " + customerInfo[3];
-            lFindTown.Content = "By: " + customerInfo[4];
-            lFindTelephone.Content = "Telefonnummer: " + customerInfo[5];
+            lFindID.Content = "ID: " + customer.Id;
+            lFindName.Content = "Navn: " + customer.Name;
+            lFindAddress.Content = "Adresse: " + customer.Address;
+            lFindZIP.Content = "ZIP: " + customer.ZIP;
+            lFindTown.Content = "By: " + customer.Town;
+            lFindTelephone.Content = "Telefonnummer: " + customer.Telephone;
         }
     }
 }

@@ -31,5 +31,17 @@ namespace KvalitetLibrary.App
         {
             return new Product(id, name, description, price, minInStock);
         }
+
+        public Product GetProduct(int id)
+        {
+            foreach (Product product in products)
+            {
+                if (product.ProductId == id)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
     }
 }
