@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using KvalitetLibrary.App;
+using KvalitetLibrary.Domain;
 
 namespace Kvalitet1
 {
@@ -21,6 +22,8 @@ namespace Kvalitet1
     public partial class NewOrderWindow : Window
     {
         private Controller control;
+        private Product product;
+        private List<SaleOrderLine> saleOrderLines;
         public NewOrderWindow(Controller control)
         {
             InitializeComponent();
@@ -34,24 +37,65 @@ namespace Kvalitet1
             this.Close();
         }
 
-        private void OrderNameTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BtnFindProduct_Click(object sender, RoutedEventArgs e)
         {
+            product = control.GetProduct(tbProductName.Text);
 
+            lProductName.Content = "Produkt: " + product.Name;
+            lProductPrice.Content = "Pris pr. stk.: " + product.Price + ",-";
         }
 
-        private void DescriptonTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void TbQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            int.TryParse(tbQuantity.Text, out int quantity);
+            lPrice.Content = "I alt: " + product.Price * quantity + ",-";
         }
 
-        private void PriceTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BtnSaleOrderLine_Click(object sender, RoutedEventArgs e)
         {
+            if (saleOrderLines == null)
+            {
+                saleOrderLines = new List<SaleOrderLine>();
+            }
 
+            int.TryParse(tbQuantity.Text, out int quantity);
+            saleOrderLines.Add(new SaleOrderLine(product, quantity, product.Price * quantity));
+
+            lbOrderLines.Items.Add(product.Name + "\t" + product.Price + "\t" + quantity + "\t" + product.Price * quantity);
+
+            double total = 0;
+            foreach (SaleOrderLine saleOrderLine in saleOrderLines)
+            {
+                total += saleOrderLine.Price;
+            }
+            lTotal.Content = "I alt: " + total + ",-";
         }
 
-        private void StockTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BtnCreateOrder_Click(object sender, RoutedEventArgs e)
         {
+            Customer customer = control.GetCustomer(tbCustomerId.Text);
+            if (customer != null)
+            {
+                control.CreateOrder(saleOrderLines, customer, DateTime.Today.ToShortDateString(), DateTime.Today.AddDays(3).ToShortDateString());
+            }
+            CleanUp();
+        }
 
+        private void CleanUp()
+        {
+            saleOrderLines = new List<SaleOrderLine>();
+            product = null;
+            
+            tbProductName.Text = "";
+
+            lProductName.Content = "Produkt: Ingen";
+            lProductPrice.Content = "Pris pr. stk.: 00,00,-";
+            tbQuantity.Text = "";
+            lPrice.Content = "I alt: 00,00,-";
+
+            tbCustomerId.Text = "";
+            lbOrderLines.Items.Clear();
+            lTotal.Content = "I alt: 00,00,-";
         }
     }
 }

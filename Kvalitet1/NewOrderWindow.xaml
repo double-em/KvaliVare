@@ -5,16 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kvalitet1"
         mc:Ignorable="d"
-        Title="NewOrderWindow" Height="600" Width="400">
+        Title="NewOrderWindow" Height="600" Width="640">
     <Grid>
         <Grid Height="90" VerticalAlignment="Top" Background="#FF410A66" >
             <Label Content="Pretty Hair" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" />
             <Label Content="Opret ordre" FontSize="22" Margin="121,41,121,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Foreground="White"/>
 
-            <Button Name="TilbageButton" Content="tilbage" HorizontalAlignment="Left" Margin="276,29,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="TilbageButton_Click"/>
+            <Button Name="TilbageButton" Content="tilbage" HorizontalAlignment="Left" Margin="547,29,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="TilbageButton_Click"/>
 
         </Grid>
+        <Label Content="Produktnavn:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbProductName" HorizontalAlignment="Left" Height="23" Margin="10,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="532"/>
+        <Button Name="btnFindProduct" Content="Find Produkt" HorizontalAlignment="Left" Margin="547,118,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BtnFindProduct_Click"/>
+        
+        <Rectangle Fill="#ddd" HorizontalAlignment="Left" Height="1" Margin="0,160,0,0" VerticalAlignment="Top" Width="632"/>
+        <Rectangle Fill="#ddd" HorizontalAlignment="Left" Height="1" Margin="0,200,0,0" VerticalAlignment="Top" Width="632"/>
+        
+        <Label Name="lProductName" Content="Produkt: Ingen" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
+        <Label Name="lProductPrice" Content="Pris pr. stk.: 00,00,-" HorizontalAlignment="Left" Margin="184,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.868,0.385"/>
+        <Label Name="lQuantity" Content="Antal:" HorizontalAlignment="Left" Margin="336,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.25,0.077"/>
+        <Label Name="lPrice" Content="I alt: 00,00,-" HorizontalAlignment="Left" Margin="458,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.25,0.077"/>
+        <TextBox Name="tbQuantity" HorizontalAlignment="Left" Height="23" Margin="376,169,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60" TextChanged="TbQuantity_TextChanged"/>
+        <Button Name="btnSaleOrderLine" Content="Tilføj" HorizontalAlignment="Left" Margin="547,169,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BtnSaleOrderLine_Click"/>
 
+        <Label Content="Ordren" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top"/>
+        <ListBox Name="lbOrderLines" HorizontalAlignment="Left" Height="242" Margin="10,232,0,0" VerticalAlignment="Top" Width="612"/>
+        <Label Name="lTotal" Content="I alt: 00,00,-" HorizontalAlignment="Left" Margin="476,474,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.25,0.077" FontSize="20"/>
+        
+        <Label Content="Kundenummer:" HorizontalAlignment="Left" Margin="10,530,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbCustomerId" HorizontalAlignment="Left" Height="23" Margin="101,533,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="441"/>
+        <Button Name="btnCreateOrder" Content="Opret Ordre" HorizontalAlignment="Left" Margin="547,533,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BtnCreateOrder_Click"/>
+
+        <!--
         <Border Width="370" Height="60" CornerRadius="15" Background="#FF410A66" VerticalAlignment="top"  Margin=" 10,100,0,0" HorizontalAlignment="Left" >
             <Label Content="Navn" Foreground="White" FontSize="20" HorizontalAlignment="Left" Width="370"></Label>
         </Border>
@@ -26,16 +48,15 @@
 
         </Border>
         <Border Width="370" Height="60" CornerRadius="15" Background="#FF410A66" VerticalAlignment="top" Margin="10,325,0,0" HorizontalAlignment="Left">
-            <Label Content="På lager" Foreground="White" FontSize="20" HorizontalAlignment="Left" Width="372"></Label>
+            <Label Content="På lager" Foreground="White" FontSize="20" HorizontalAlignment="Left" Width="372" Margin="0,0,-2,0"/>
         </Border>
-        
-
 
         <TextBox x:Name="OrderNameTxtBox" HorizontalAlignment="Right" Height="34" Margin="0,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="240" TextChanged="OrderNameTxtBox_TextChanged"/>
         <TextBox x:Name="DescriptonTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,187,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="240" TextChanged="DescriptonTxtBox_TextChanged"/>
         <TextBox x:Name="PriceTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,261,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="240" TextChanged="PriceTxtBox_TextChanged"/>
         <TextBox x:Name="StockTxtBox" HorizontalAlignment="Right" Height="34" Margin="80,335,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="240" TextChanged="StockTxtBox_TextChanged"/>
-       
+        -->
+
     </Grid>
 </Window>
     

@@ -14,7 +14,8 @@ namespace KvalitetLibrary.App
 
         public DBcontroller()
         {
-            this.connectionString = "Server=EALSQL1.eal.local;Database=B_DB24_2018;User Id=B_STUDENT24;Password=B_OPENDB24;";
+            this.connectionString =
+                "Server=EALSQL1.eal.local;Database=B_DB24_2018;User Id=B_STUDENT24;Password=B_OPENDB24;";
         }
 
         public SqlConnection GetDatabaseConnection()
@@ -100,6 +101,26 @@ namespace KvalitetLibrary.App
             }
         }
 
+        public int RegisterOrder(int customerId, string orderDate, string deliveryDate, bool picked)
+        {
+            using (SqlConnection connection = GetDatabaseConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("spRegisterOrder", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@customerId", SqlDbType.Int).Value = customerId;
+                    cmd.Parameters.Add("@orderDate", SqlDbType.NChar).Value = orderDate;
+                    cmd.Parameters.Add("@deliveryDate", SqlDbType.NChar).Value = deliveryDate;
+                    cmd.Parameters.Add("@picked", SqlDbType.Bit).Value = picked;
+
+                    connection.Open();
+
+                    return int.Parse(ListResult(cmd)[0]);
+                }
+            }
+        }
+
         List<string> ListResult(SqlCommand cmd)
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -125,7 +146,5 @@ namespace KvalitetLibrary.App
                 return result;
             }
         }
-
-        
     }
 }

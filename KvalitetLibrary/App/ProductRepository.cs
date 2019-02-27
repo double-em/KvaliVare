@@ -43,5 +43,17 @@ namespace KvalitetLibrary.App
             }
             return null;
         }
+
+        public Product GetProduct(string name)
+        {
+            foreach (Product product in products)
+            {
+                if (product.Name == name)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
     }
 }

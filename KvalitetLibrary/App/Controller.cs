@@ -91,14 +91,10 @@ namespace KvalitetLibrary.App
             }
         }
 
-        public void CreateOrder(string orderDate, string deliveryDate, int productTypeId, int quantity)
+        public void CreateOrder(List<SaleOrderLine> orderlines, Customer customer, string orderDate, string deliveryDate, bool picked = false)
         {
-            
-        }
-
-        public void AddSaleOrderLine(int orderId)
-        {
-            
+            int orderId = dBcontroller.RegisterOrder(customer.Id, orderDate, deliveryDate, picked);
+            orderRepository.AddOrder(orderRepository.CreateOrder(orderlines, customer, orderId, orderDate, deliveryDate, picked));
         }
 
         public Customer GetCustomer(string searchQuery)
@@ -109,6 +105,11 @@ namespace KvalitetLibrary.App
         public Product GetProduct(int id)
         {
             return productRepository.GetProduct(id);
+        }
+
+        public Product GetProduct(string name)
+        {
+            return productRepository.GetProduct(name);
         }
     }
 }
