@@ -21,5 +21,15 @@ namespace KvalitetLibrary.App
             }
             return instance;
         }
+
+        public void AddProduct(Product product)
+        {
+            products.Add(product);
+        }
+
+        public Product CreateProduct(int id, string name, string description, double price, int minInStock)
+        {
+            return new Product(id, name, description, price, minInStock);
+        }
     }
 }

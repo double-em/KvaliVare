@@ -36,6 +36,20 @@ namespace KvalitetLibrary.App
             }
         }
 
+        public List<string> GetAllProducts()
+        {
+            using (SqlConnection connection = GetDatabaseConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("spGetAllProducts", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+                    return ListResult(cmd);
+                }
+            }
+        }
+
         public int RegisterUser(string name, string address, string zip, string town, string telephone)
         {
             using (SqlConnection connection = GetDatabaseConnection())

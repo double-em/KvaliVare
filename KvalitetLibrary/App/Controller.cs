@@ -14,17 +14,12 @@ namespace KvalitetLibrary.App
         private OrderRepository orderRepository;
         private ProductRepository productRepository;
         private DBcontroller dBcontroller = new DBcontroller();
-        private List<string> templist;
 
         public Controller()
         {
-            update();
-            customerRepository = customerRepository.Getinstance();
-            foreach (var item in templist)
-            {
-                string[] splitarry = item.Split(',');
-                customerRepository.AddCustomer(customerRepository.CreateCustomer(int.Parse(splitarry[0]), splitarry[1], splitarry[2], splitarry[3], splitarry[4], splitarry[5]));
-            }
+            SetupCustomerRepo();
+
+            SetupProductRepo();
 
         }
 
@@ -33,6 +28,34 @@ namespace KvalitetLibrary.App
             int id = dBcontroller.RegisterUser(name, address, ZIP, town, telephone);
             Customer customer = customerRepository.CreateCustomer(id, name, address, ZIP, town, telephone);
             customerRepository.AddCustomer(customer);
+        }
+
+        public void SetupCustomerRepo()
+        {
+            List<string> templist = dBcontroller.GetAllCustomers();
+            customerRepository = customerRepository.Getinstance();
+            foreach (var item in templist)
+            {
+                string[] splitarry = item.Split(',');
+                customerRepository.AddCustomer(customerRepository.CreateCustomer(int.Parse(splitarry[0]), splitarry[1], splitarry[2], splitarry[3], splitarry[4], splitarry[5]));
+            }
+        }
+
+        public void SetupProductRepo()
+        {
+            productRepository = productRepository.getInstance();
+            List<string> products = dBcontroller.GetAllProducts();
+            foreach (string productValues in products)
+            {
+                string[] values = productValues.Split(',');
+
+                int.TryParse(values[0], out int id);
+                double.TryParse(values[3], out double price);
+                int.TryParse(values[4], out int minInStock);
+                Product product = productRepository.CreateProduct(id, values[1], values[2], price, minInStock);
+                productRepository.AddProduct(product);
+            }
+
         }
 
         public void CreateOrder(string orderDate, string deliveryDate, int productTypeId, int quantity)
@@ -49,11 +72,5 @@ namespace KvalitetLibrary.App
         {
             return customerRepository.GetCustomer(searchQuery);
         }
-
-        private void update()
-        {
-            templist = dBcontroller.GetAllCustomers();            
-        }
-
     }
 }
