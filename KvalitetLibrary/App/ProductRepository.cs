@@ -11,9 +11,9 @@ namespace KvalitetLibrary.App
     class ProductRepository
     {
         private List<Product> products = new List<Product>();
-        private ProductRepository instance;
+        private static ProductRepository instance;
 
-        public ProductRepository getInstance()
+        public static ProductRepository getInstance()
         {
             if (instance == null)
             {

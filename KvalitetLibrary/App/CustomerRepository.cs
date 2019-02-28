@@ -12,7 +12,7 @@ namespace KvalitetLibrary.App
         private static CustomerRepository instance; 
         private List<Customer> customers = new List<Customer>();
 
-        public CustomerRepository Getinstance()
+        public static CustomerRepository Getinstance()
         {
             if (instance == null)
             {

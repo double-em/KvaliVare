@@ -10,10 +10,10 @@ namespace KvalitetLibrary.App
 {
     class OrderRepository
     {
-        private OrderRepository instance;
+        private static OrderRepository instance;
         private List<Order> orders = new List<Order>();
 
-        public OrderRepository getInstance()
+        public static OrderRepository getInstance()
         {
             if (instance == null)
             {

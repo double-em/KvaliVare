@@ -41,12 +41,15 @@ namespace Kvalitet1
         {
             Customer customer = control.GetCustomer(CustomerIDTxtBox.Text);
 
-            lFindID.Content = "ID: " + customer.Id;
-            lFindName.Content = "Navn: " + customer.Name;
-            lFindAddress.Content = "Adresse: " + customer.Address;
-            lFindZIP.Content = "ZIP: " + customer.ZIP;
-            lFindTown.Content = "By: " + customer.Town;
-            lFindTelephone.Content = "Telefonnummer: " + customer.Telephone;
+            if (customer != null)
+            {
+                lFindID.Content = "ID: " + customer.Id;
+                lFindName.Content = "Navn: " + customer.Name;
+                lFindAddress.Content = "Adresse: " + customer.Address;
+                lFindZIP.Content = "ZIP: " + customer.ZIP;
+                lFindTown.Content = "By: " + customer.Town;
+                lFindTelephone.Content = "Telefonnummer: " + customer.Telephone;
+            }
         }
     }
 }

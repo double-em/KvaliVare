@@ -35,7 +35,7 @@ namespace KvalitetLibrary.App
         public void SetupCustomerRepo()
         {
             List<string> templist = dBcontroller.GetAllCustomers();
-            customerRepository = customerRepository.Getinstance();
+            customerRepository = CustomerRepository.Getinstance();
             foreach (var item in templist)
             {
                 string[] splitarry = item.Split(',');
@@ -45,7 +45,7 @@ namespace KvalitetLibrary.App
 
         public void SetupProductRepo()
         {
-            productRepository = productRepository.getInstance();
+            productRepository = ProductRepository.getInstance();
             List<string> products = dBcontroller.GetAllProducts();
             foreach (string productValues in products)
             {
@@ -61,7 +61,7 @@ namespace KvalitetLibrary.App
 
         private void SetupOrderRepo()
         {
-            orderRepository = orderRepository.getInstance();
+            orderRepository = OrderRepository.getInstance();
             List<string> orders = dBcontroller.GetAllOrders();
 
             foreach (string order in orders)
