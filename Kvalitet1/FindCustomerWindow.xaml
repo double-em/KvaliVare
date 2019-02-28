@@ -18,10 +18,10 @@
         </Grid>
 
         <Border Width="370" Height="60" CornerRadius="15" Background="#FF410A66" VerticalAlignment="top"  Margin="11,100,11,0">
-            <Label Content="Kunde Id" Foreground="White" FontSize="20"></Label>
+            <Label Content="Kunde Id&#xD;&#xA;eller navn" Foreground="White" FontSize="20" Margin="10,0,263,0" RenderTransformOrigin="0.615,0.396"></Label>
         </Border>
 
-        <TextBox x:Name="CustomerIDTxtBox" HorizontalAlignment="Right" Height="34" Margin="0,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="250" TextChanged="CustomerIDTxtBox_TextChanged"/>
+        <TextBox x:Name="CustomerIDTxtBox" HorizontalAlignment="Right" Height="34" Margin="0,113,30,0" TextWrapping="wrap" FontSize="22" VerticalAlignment="Top" Width="240" TextChanged="CustomerIDTxtBox_TextChanged"/>
         <Border Height="60" CornerRadius="15" Background="#FF410A66" VerticalAlignment="top"  Margin="9,187,12,0">
         </Border>
         <Border Height="60" CornerRadius="15" Background="#FF410A66" VerticalAlignment="top"  Margin="9,265,12,0">
