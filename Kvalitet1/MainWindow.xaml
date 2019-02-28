@@ -23,8 +23,8 @@
             
         </Border>
 
-        <Button x:Name="FindCustomerbutton" Content="Find kunde " HorizontalAlignment="Left" Margin="140,416,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="FindCustomerbutton_Click"/>
-        <Button x:Name="NewOrderbutton" Content="Opret ordre" HorizontalAlignment="Left" Margin="140,202,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="NewOrderbutton_Click"/>
+        <Button x:Name="FindCustomerbutton" Content="Find Kunde " HorizontalAlignment="Left" Margin="140,416,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="FindCustomerbutton_Click"/>
+        <Button x:Name="NewOrderbutton" Content="Opret Ordre" HorizontalAlignment="Left" Margin="140,202,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="NewOrderbutton_Click"/>
         <Button x:Name="NewCustomerbutton" Content="Opret Kunde" HorizontalAlignment="Left" Margin="140,305,0,0" VerticalAlignment="Top" Width="115" Height="51" Click="NewCustomerbutton_Click"/>
 
 

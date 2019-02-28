@@ -41,14 +41,22 @@ namespace Kvalitet1
         {
             product = control.GetProduct(tbProductName.Text);
 
-            lProductName.Content = "Produkt: " + product.Name;
-            lProductPrice.Content = "Pris pr. stk.: " + product.Price + ",-";
+            if (product != null)
+            {
+                lProductName.Content = "Produkt: " + product.Name;
+                lProductPrice.Content = "Pris pr. stk.: " + product.Price + ",-";
+            }
+            
         }
 
         private void TbQuantity_TextChanged(object sender, TextChangedEventArgs e)
         {
             int.TryParse(tbQuantity.Text, out int quantity);
-            lPrice.Content = "I alt: " + product.Price * quantity + ",-";
+            if (product != null)
+            {
+                lPrice.Content = "I alt: " + product.Price * quantity + ",-";
+            }
+            
         }
 
         private void BtnSaleOrderLine_Click(object sender, RoutedEventArgs e)
@@ -61,7 +69,7 @@ namespace Kvalitet1
             int.TryParse(tbQuantity.Text, out int quantity);
             saleOrderLines.Add(new SaleOrderLine(product, quantity, product.Price * quantity));
 
-            lbOrderLines.Items.Add(product.Name + "\t" + product.Price + "\t" + quantity + "\t" + product.Price * quantity);
+            lbOrderLines.Items.Add(product.Name + "\t" + product.Price + "\t" + quantity + "\t" + (double)(product.Price * quantity));
 
             double total = 0;
             foreach (SaleOrderLine saleOrderLine in saleOrderLines)
@@ -74,11 +82,17 @@ namespace Kvalitet1
         private void BtnCreateOrder_Click(object sender, RoutedEventArgs e)
         {
             Customer customer = control.GetCustomer(tbCustomerId.Text);
-            if (customer != null)
+            if (customer == null || tbCustomerId.Text == "")
             {
-                control.CreateOrder(saleOrderLines, customer, DateTime.Today.ToShortDateString(), DateTime.Today.AddDays(3).ToShortDateString());
+                MessageBox.Show("Kundenummer eksitere ikke");
             }
-            CleanUp();
+            else
+            {
+                control.CreateOrder(saleOrderLines, customer, DateTime.Today.ToShortDateString(),
+                    DateTime.Today.AddDays(3).ToShortDateString());
+                CleanUp();
+            }
+
         }
 
         private void CleanUp()
