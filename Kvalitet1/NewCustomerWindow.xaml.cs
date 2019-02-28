@@ -36,13 +36,16 @@ namespace Kvalitet1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            control.CreateCustomerandAdd(CustomerNameTxtBox.Text, AdressTxtBox.Text, ZipTxtBox.Text, TownTxtBox.Text, PhoneTxtBox.Text);
+            if (CustomerNameTxtBox.Text != "" && AdressTxtBox.Text != "" && ZipTxtBox.Text != "" && TownTxtBox.Text != "" && PhoneTxtBox.Text != "")
+            {
+                control.CreateCustomerandAdd(CustomerNameTxtBox.Text, AdressTxtBox.Text, ZipTxtBox.Text, TownTxtBox.Text, PhoneTxtBox.Text);
 
-            CustomerNameTxtBox.Text = "";
-            AdressTxtBox.Text = "";
-            ZipTxtBox.Text = "";
-            TownTxtBox.Text = "";
-            PhoneTxtBox.Text = "";
+                CustomerNameTxtBox.Text = "";
+                AdressTxtBox.Text = "";
+                ZipTxtBox.Text = "";
+                TownTxtBox.Text = "";
+                PhoneTxtBox.Text = "";
+            }
         }
     }
 }
