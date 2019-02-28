@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kvalitet1", "Kvalitet1\Kval
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KvalitetLibrary", "KvalitetLibrary\KvalitetLibrary.csproj", "{97AD4694-C0DA-462A-8B3E-BC76255C8538}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{8FD6E054-CFF1-4E30-9DD6-6D46639DF7C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97AD4694-C0DA-462A-8B3E-BC76255C8538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FD6E054-CFF1-4E30-9DD6-6D46639DF7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD6E054-CFF1-4E30-9DD6-6D46639DF7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD6E054-CFF1-4E30-9DD6-6D46639DF7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD6E054-CFF1-4E30-9DD6-6D46639DF7C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
