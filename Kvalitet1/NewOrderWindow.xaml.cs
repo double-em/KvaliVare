@@ -82,12 +82,17 @@ namespace Kvalitet1
         private void BtnCreateOrder_Click(object sender, RoutedEventArgs e)
         {
             Customer customer = control.GetCustomer(tbCustomerId.Text);
-            if (customer != null)
+            if (customer == null || tbCustomerId.Text == "")
             {
-                control.CreateOrder(saleOrderLines, customer, DateTime.Today.ToShortDateString(), DateTime.Today.AddDays(3).ToShortDateString());
+                MessageBox.Show("Kundenummer eksitere ikke");
+            }
+            else
+            {
+                control.CreateOrder(saleOrderLines, customer, DateTime.Today.ToShortDateString(),
+                    DateTime.Today.AddDays(3).ToShortDateString());
                 CleanUp();
             }
-            
+
         }
 
         private void CleanUp()
