@@ -27,7 +27,7 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spGetAllCustomers", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spGetAllCustomers", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -41,7 +41,7 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spGetAllProducts", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spGetAllProducts", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -55,7 +55,7 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spGetAllOrders", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spGetAllOrders", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -69,7 +69,7 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spGetSaleOrderLines", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spGetSaleOrderLines", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Id", SqlDbType.Int).Value = orderId;
@@ -84,15 +84,15 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spRegisterUser", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spRegisterUser", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
                     cmd.Parameters.Add("@address", SqlDbType.NVarChar).Value = address;
-                    cmd.Parameters.Add("@zip", SqlDbType.NVarChar).Value = zip;
+                    cmd.Parameters.Add("@zip", SqlDbType.NChar).Value = zip;
                     cmd.Parameters.Add("@town", SqlDbType.NVarChar).Value = town;
-                    cmd.Parameters.Add("@telephone", SqlDbType.NVarChar).Value = telephone;
+                    cmd.Parameters.Add("@telephone", SqlDbType.NChar).Value = telephone;
 
                     connection.Open();
 
@@ -105,7 +105,7 @@ namespace KvalitetLibrary.App
         {
             using (SqlConnection connection = GetDatabaseConnection())
             {
-                using (SqlCommand cmd = new SqlCommand("spRegisterOrder", connection))
+                using (SqlCommand cmd = new SqlCommand("KV_spRegisterOrder", connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
